@@ -33,7 +33,7 @@ pipeline {
     stage('K8S Deployment - PROD') {
 	    steps {
         withKubeConfig([credentialsId: 'kubeconfig']) {
-          sh "sed -i 's#replace#abhaymarwade/devsecops:${GIT_COMMIT}#g' k8s_PROD-deployment_service.yaml"
+          sh "sed -i 's#replace#abhaymarwade/devsecops:${GIT_COMMIT}#g' k8s_deployment_service.yaml"
           sh "kubectl -n prod apply -f k8s_PROD-deployment_service.yaml"
            }
          }
