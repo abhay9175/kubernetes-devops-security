@@ -43,7 +43,7 @@ pipeline {
         withDockerRegistry([credentialsId: "dockerhub", url: ""]) {
           sh 'printenv'
           sh 'sudo docker build -t abhaymarwade/devsecops_new:""$GIT_COMMIT"" .'
-          sh 'docker push abhaymarwade/devsecops_new:""$GIT_COMMIT""'
+          //sh 'docker push abhaymarwade/devsecops_new:""$GIT_COMMIT""'
         }
       }
     }
