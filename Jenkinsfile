@@ -49,7 +49,7 @@ pipeline {
 		 sh "bash trivy-docker-image-scan.sh"
                       },
 	     "OPA Conftest":{
-		echo "Current directory: $(pwd)"
+		echo "Current directory: \$(pwd)"
                 sh 'docker run --rm -v $(pwd):/project openpolicyagent/conftest test --policy opa-docker-security.rego Dockerfile'
 	   }   
         )
