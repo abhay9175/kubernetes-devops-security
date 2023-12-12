@@ -96,7 +96,7 @@ pipeline {
         )
       }
     }
-	  
+  }	  
     post { 
          always { 
            junit 'target/surefire-reports/TEST-com.devsecops.NumericApplicationTests.xml'
@@ -105,4 +105,3 @@ pipeline {
 	}
       }
     }  
-}
