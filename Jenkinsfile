@@ -84,11 +84,11 @@ pipeline {
       steps {
         parallel(
           "Deployment": {
-           withKubeConfig([credentialsId: 'kubeconfig']) {
-             sh "bash k8s-deployment.sh"
+            withKubeConfig([credentialsId: 'kubeconfig']) {
+              sh "bash k8s-deployment.sh"
              }
           },
-           "Rollout Status": {
+          "Rollout Status": {
             withKubeConfig([credentialsId: 'kubeconfig']) {
               sh "bash k8s-deployment-rollout-status.sh"
             }
@@ -104,4 +104,5 @@ pipeline {
            dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'		
 	}
       }
-    }   
+    }  
+}
