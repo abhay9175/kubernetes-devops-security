@@ -6,7 +6,7 @@ pipeline {
     containerName = "devsecops-container"
     serviceName = "devsecops-svc"
     imageName = "abhaymarwade/devsecops_new:${GIT_COMMIT}"
-    applicationURL="https://ec2-13.233.154.169.ap-south-1.compute.amazonaws.com"
+    applicationURL="https://ec2-43.205.13.155.ap-south-1.compute.amazonaws.com"
     applicationURI="/increment/99"
   }
 	
@@ -37,7 +37,7 @@ pipeline {
     
     stage('sonarQube - SAST') {
       steps { 
-        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric_application -Dsonar.projectName='numeric_application' -Dsonar.host.url=http://ec2-13-233-154-169.ap-south-1.compute.amazonaws.com:9000 -Dsonar.token=sqp_4324a50dac36209e2bbfbb433503fbcda7b9ce7e"
+        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric_application -Dsonar.projectName='numeric_application' -Dsonar.host.url=http://ec2-43.205.13.155.ap-south-1.compute.amazonaws.com:9000 -Dsonar.token=sqp_4324a50dac36209e2bbfbb433503fbcda7b9ce7e"
       }
   }
 
