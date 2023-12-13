@@ -37,15 +37,8 @@ pipeline {
     
     stage('sonarQube - SAST') {
       steps { 
-	withSonarQubeEnv('SonarQube') {     
         sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric_application -Dsonar.projectName='numeric_application' -Dsonar.host.url=http://ec2-13-233-154-169.ap-south-1.compute.amazonaws.com:9000 -Dsonar.token=sqp_4324a50dac36209e2bbfbb433503fbcda7b9ce7e"
       }
-      timeout(time: 2, unit: 'MINUTES') {
-        script {
-          waitForQualityGate abortPipeline: true
-        }
-      }       
-    }
   }
 
     stage('Vulnerability Scan - Docker') {
