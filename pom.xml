@@ -38,31 +38,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		<dependency>
-        		<groupId>org.springframework</groupId>
-        		<artifactId>spring-beans</artifactId>
-        		<version>5.2.20.RELEASE</version>
-    		</dependency>
-
-    		<dependency>
-        		<groupId>org.springframework</groupId>
-        		<artifactId>spring-web</artifactId>
-        		<version>6.0.0</version>
-    		</dependency>
-
-    		<dependency>
-        		<groupId>org.springframework</groupId>
-        		<artifactId>spring-webmvc</artifactId>
-        		<version>5.3.18</version>
-    		</dependency>
-
-    		<!-- SnakeYAML dependency -->
-    		<dependency>
-        		<groupId>org.yaml</groupId>
-        		<artifactId>snakeyaml</artifactId>
-        		<version>1.26</version>
-    		</dependency>
 	</dependencies>
 
 	<build>
