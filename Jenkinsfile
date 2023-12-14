@@ -99,8 +99,7 @@ pipeline {
         )
       }
     }
-  }	
-
+	  
      stage('Integration Tests - DEV') {
        steps {
          script {
@@ -126,3 +125,4 @@ pipeline {
 	}
       }
     }  
+}
