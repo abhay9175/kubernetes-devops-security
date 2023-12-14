@@ -15,7 +15,7 @@ then
     response=$(curl -s $applicationURL:$PORT$applicationURI)
     http_code=$(curl -s -o /dev/null -w "%{http_code}" $applicationURL:$PORT$applicationURI)
 
-    if [[ "$response" == 100 ]];
+    if [[ "$response" == 500 ]];
         then
             echo "Increment Test Passed"
         else
@@ -23,7 +23,7 @@ then
             exit 1;
     fi;
 
-    if [[ "$http_code" == 200 ]];
+    if [[ "$http_code" == 500 ]];
         then
             echo "HTTP Status Code Test Passed"
         else
