@@ -7,7 +7,7 @@ pipeline {
     serviceName = "devsecops-svc"
     imageName = "abhaymarwade/devsecops_new:${GIT_COMMIT}"
     applicationURL="https://ec2-43.205.13.155.ap-south-1.compute.amazonaws.com"
-    applicationURI="/increment/99"
+    applicationURI="increment/99"
   }
 	
   stages {
