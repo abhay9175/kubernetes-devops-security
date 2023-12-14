@@ -99,7 +99,6 @@ pipeline {
         )
       }
     }
-  }
 	  
      stage('Integration Tests - DEV') {
        steps {
@@ -117,6 +116,7 @@ pipeline {
          }
        }
      }
+  }
 	
     post { 
          always { 
