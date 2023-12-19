@@ -10,7 +10,7 @@ echo $(id -u):$(id -g)
 
 
 # comment above cmd and uncomment below lines to run with CUSTOM RULES
-docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t $applicationURL:$PORT/v3/api-docs -f openapi -c zap_rules -r zap_report.html
+docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t http://ec2-43-205-13-155.ap-south-1.compute.amazonaws.com:$PORT/v3/api-docs -f openapi -c zap_rules -r zap_report.html
 
 exit_code=$?
 
