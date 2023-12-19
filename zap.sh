@@ -5,7 +5,8 @@ PORT=$(kubectl -n default get svc ${serviceName} -o json | jq .spec.ports[].node
 # first run this
 chmod 777 $(pwd)
 echo $(id -u):$(id -g)
-docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t $applicationURL:$PORT/v3/api-docs -f openapi -r zap_report.html
+#docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t $applicationURL:$PORT/v3/api-docs -f openapi -r zap_report.html
+docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-weekly zap-api-scan.py -t http://ec2-43-205-13-155.ap-south-1.compute.amazonaws.com:$PORT/v3/api-docs -f openapi -r zap_report.html
 
 
 # comment above cmd and uncomment below lines to run with CUSTOM RULES
